@@ -1,0 +1,43 @@
+.navbar {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    background-color: #E7BC91;
+    height: 140px;
+  }
+  
+  body {
+    background-color: #010101; 
+  }
+  
+  .navbar-toggler {
+    order: 1; 
+  }
+  
+  .navbar-collapse {
+    order: 2; 
+  }
+  
+  .navbar-nav {
+    margin-left: auto; 
+  }
+  
+  .navbar-search-form {
+    margin-left: auto; 
+  }
+
+  .navbar-brand {
+    font-size: 100px !important;
+    font-family: 'Monsieur La Doulaise', cursive;
+    margin-left: 0px;
+    color: #8B5E34;
+}
+
+.navbar-brand,
+.navbar-brand:visited {
+  color: #8B5E34;
+}
+
+.navbar-brand:hover {
+  color: #D4A276;
+}
