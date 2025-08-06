@@ -1,7 +1,13 @@
 .App {
   text-align: center;
-  color: #8B5E34;
-  background-color: #fadab4;
+  background-color: #d6aaa9;
+  min-height: 100vh;
+  font-family: 'Dancing Script', cursive;
+}
+
+/* Exclude navbar and dropdown from the font change */
+.navbar, .navbar *, .sidebar-drawer, .sidebar-drawer * {
+  font-family: inherit;
 }
 
 .App-logo {
@@ -17,12 +23,7 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 20px;
   color: white;
 }
 

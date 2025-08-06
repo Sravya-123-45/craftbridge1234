@@ -1,3 +1,10 @@
+.home-container {
+    min-height: calc(100vh - 70px); /* Subtract navbar height */
+    display: flex;
+    flex-direction: column;
+    background: #d6aaa9;
+}
+
 .carousel {
     display: flex;
     justify-content: center; 
@@ -7,15 +14,31 @@
     margin-left: 40px;
     margin-right: 40px;
     margin-top: 40px;
+    flex: 1;
 }
 
 .carousel-item img {
     width: 80%; 
     height: 500px; 
     border-radius: 12px;
-  }
+}
+
+.home-footer {
+    padding: 2rem;
+    text-align: center;
+    background: #d98c8b;
+    margin-top: auto;
+}
 
 h2 {
+    color: #8B5E34;
+    font-family: 'Rastanty Cortez', cursive;
+    margin-bottom: 0.5rem;
+}
+
+.home-footer p {
     color: #583101;
-    font-family: 'Halton', sans-serif;
+    font-size: 1.1rem;
+    margin: 0;
+    font-family: 'Rastanty Cortez', cursive;
 }

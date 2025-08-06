@@ -1,6 +1,5 @@
 import React from 'react';
 import './States.css';
-import { Link, NavLink } from 'react-router-dom'
 // import { AP } from './AP/AP';
 import  StateCard  from '../StateCard/StateCard'
 

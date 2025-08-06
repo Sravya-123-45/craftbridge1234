@@ -9,7 +9,7 @@ import varanasi from '../Assets/Home/varanasi.jpg';
 
 export const Home = () => {
     return (
-        <>
+        <div className="home-container">
             <div id="carouselExampleAutoplaying" className="carousel slide carousel-container" data-bs-ride="carousel">
                 <div className="carousel-inner">
                     <div className="carousel-item active">
@@ -64,10 +64,10 @@ export const Home = () => {
                     <span className="visually-hidden">Next</span>
                 </button>
             </div>
-            <div className='my-2'>
-            <h2><br />'cause where would we be without culture?</h2>
+            <div className='home-footer'>
+            <h2>'cause where would we be without culture?</h2>
             <p>divided by states, united by art.</p>
             </div>
-        </>
+        </div>
     )
 }

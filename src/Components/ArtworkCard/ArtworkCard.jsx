@@ -10,7 +10,7 @@ export default function ArtworkCard(props) {
     <>
           <div className="card mx-2 my-2" style={{width: "18rem"}}>
       <div className='row d-flex flex-col justify-content-center align-items-center my-3 ' style={{width:"16rem"}}>
-      <img src={path} alt="image" style={{maxWidth:"100%"}}></img>
+      <img src={path} alt={artworkName} style={{maxWidth:"100%"}}></img>
       </div>
       <div className="card-body">
         <h4>{artworkName}</h4>
