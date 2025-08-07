@@ -6,10 +6,15 @@ import gjtour from '../Assets/Home/gjtour.jpeg';
 import woodcarving from '../Assets/Home/woodcarving.jpg';
 import kashmiriwoodart from '../Assets/Home/kashmiriwoodart.jpg';
 import varanasi from '../Assets/Home/varanasi.jpg';
+import SearchResults from '../Search/SearchResults';
+import { useSearch } from '../Search/SearchContext';
 
 export const Home = () => {
+    const { searchQuery } = useSearch();
+    
     return (
         <div className="home-container">
+            {searchQuery.trim() && <SearchResults />}
             <div id="carouselExampleAutoplaying" className="carousel slide carousel-container" data-bs-ride="carousel">
                 <div className="carousel-inner">
                     <div className="carousel-item active">

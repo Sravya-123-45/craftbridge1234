@@ -32,6 +32,25 @@ function Contact() {
                 ""
               )}
             </address>
+            
+            {/* Social Media Links */}
+            <div className="social-media-section mt-4">
+              <h4 className="color_sec mb-3">Follow Us</h4>
+              <div className="social-links">
+                <a href="https://instagram.com/annamneedu_sravya" target="_blank" rel="noopener noreferrer" className="social-link">
+                  <i className="fab fa-instagram"></i> Instagram
+                </a>
+                <a href="https://facebook.com/craftbridge" target="_blank" rel="noopener noreferrer" className="social-link">
+                  <i className="fab fa-facebook"></i> Facebook
+                </a>
+                <a href="https://twitter.com/craftbridge" target="_blank" rel="noopener noreferrer" className="social-link">
+                  <i className="fab fa-twitter"></i> Twitter
+                </a>
+                <a href="https://linkedin.com/company/craftbridge" target="_blank" rel="noopener noreferrer" className="social-link">
+                  <i className="fab fa-linkedin"></i> LinkedIn
+                </a>
+              </div>
+            </div>
           </Col>
           <Col lg="7" className="d-flex align-items-center">
             <form  className="contact__form w-100">
@@ -74,6 +93,18 @@ function Contact() {
                 </Col>
               </Row>
             </form>
+          </Col>
+        </Row>
+        
+        {/* Copyright Section */}
+        <Row className="mt-5">
+          <Col lg="12">
+            <div className="copyright-section text-center">
+              <hr className="t_border my-4" />
+              <p className="copyright-text">
+                © 2024 CraftBridge. All rights reserved. | Empowering Indian Artisans
+              </p>
+            </div>
           </Col>
         </Row>
       </Container>

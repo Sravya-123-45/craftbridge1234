@@ -17,6 +17,7 @@ import { Odisha } from "./Components/States/Odisha/Odisha";
 import { TamilNadu } from "./Components/States/TamilNadu/TamilNadu";
 import {Goa} from "./Components/States/Goa/Goa"
 import { AuthProvider } from './Components/Auth/AuthContext';
+import { SearchProvider } from './Components/Search/SearchContext';
 import Login from './Components/Auth/Login';
 import Register from './Components/Auth/Register';
 
@@ -24,9 +25,10 @@ function App() {
   return (
     <div className="App">
       <AuthProvider>
-        <BrowserRouter>
-          <Navbar/>
-          <Routes>
+        <SearchProvider>
+          <BrowserRouter>
+            <Navbar/>
+            <Routes>
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/Home" element={<Home />} />
@@ -45,6 +47,7 @@ function App() {
             <Route path="/Goa" element={<Goa/>}/>
           </Routes>
         </BrowserRouter>
+        </SearchProvider>
       </AuthProvider>
     </div>
   );

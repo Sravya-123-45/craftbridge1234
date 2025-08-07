@@ -2,9 +2,11 @@ import React, { useState } from 'react'
 import './Navbar.css'
 import { Link } from 'react-router-dom'
 import { useAuth } from '../Auth/AuthContext';
+import { useSearch } from '../Search/SearchContext';
 
 export const Navbar = () => {
   const { user, logout } = useAuth();
+  const { searchQuery, setSearchQuery, performSearch } = useSearch();
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
@@ -34,20 +36,36 @@ export const Navbar = () => {
         </div>
         {/* Search bar before auth buttons */}
         <div className="d-flex align-items-center">
-          <form className="d-flex navbar-searchbar me-3" role="search">
-            <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" style={{ outline: '1px solid #87CEEB', minWidth: 120 }}/>
+          <form className="d-flex navbar-searchbar me-3" role="search" onSubmit={(e) => {
+            e.preventDefault();
+            performSearch(searchQuery);
+          }}>
+            <input 
+              className="form-control me-2" 
+              type="search" 
+              placeholder="Search states or crafts..." 
+              aria-label="Search" 
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              style={{ outline: '1px solid #87CEEB', minWidth: 200 }}
+            />
             <button className="btn btn-search" type="submit">Search</button>
           </form>
           {user ? (
-            <>
-              <span className="me-2" style={{ color: '#ffffff', fontWeight: 500 }}>Hello, {user.name}</span>
-              <button className="btn btn-logout" onClick={logout}>Logout</button>
-            </>
+            <div className="user-profile-inline d-flex align-items-center">
+              <div className="user-avatar me-2">
+                <span>{user.name.charAt(0).toUpperCase()}</span>
+              </div>
+              <span className="user-name me-3">{user.name}</span>
+              <button className="btn btn-logout" onClick={logout}>
+                <i className="dropdown-icon">🚪</i> Sign Out
+              </button>
+            </div>
           ) : (
-            <>
-              <Link to="/login" className="btn btn-login me-2">Login</Link>
-              <Link to="/register" className="btn btn-signup">Register</Link>
-            </>
+            <div className="auth-buttons">
+              <Link to="/login" className="btn btn-login">Sign In</Link>
+              <Link to="/register" className="btn btn-signup">Sign Up</Link>
+            </div>
           )}
         </div>
       </nav>

@@ -1,5 +1,4 @@
 import React from 'react';
-// import './AP.css'
 import '../States';
 import ArtworkCard from '../../ArtworkCard/ArtworkCard';
 
@@ -12,12 +11,10 @@ export const Karnataka = () => {
     "Channapatna Toys are a unique form of wooden toys and dolls that are manufactured in the town of Channapatna in the Ramanagara district of Karnataka state, India"]
 
     return (
-        
         <div className='d-flex flex-wrap justify-content-center mx-5'>
          {artNames.map((artName,idx)=>{
             return (<ArtworkCard  currState="Karnataka" desc={desc[idx]} idx={idx} artName={artName}/>)
         })}
         </div>
-        
     )
 }

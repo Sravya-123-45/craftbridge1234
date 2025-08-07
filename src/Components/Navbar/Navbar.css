@@ -52,6 +52,7 @@
   font-weight: 500;
   text-decoration: none;
   transition: color 0.2s;
+  font-family: 'Rastanty Cortez', cursive;
 }
 .sidebar-links a:hover {
   color: #D4A276;
@@ -77,6 +78,7 @@
   min-height: 70px;
   box-shadow: 0 2px 8px rgba(217,140,139,0.1);
   padding: 0.5rem 1.5rem;
+  font-family: 'Rastanty Cortez', cursive;
 }
 
 .navbar-searchbar {
@@ -93,6 +95,7 @@
   border: 1.5px solid #8B5E34;
   font-size: 1rem;
   transition: background 0.2s, color 0.2s;
+  font-family: 'Rastanty Cortez', cursive;
 }
 .btn-login {
   background: #fff;
@@ -143,6 +146,259 @@
   white-space: nowrap;
 }
 
+/* Professional User Profile Styles */
+.user-profile-section {
+  position: relative;
+}
+
+.user-profile-trigger {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(139, 94, 52, 0.2);
+}
+
+.user-profile-trigger:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(139, 94, 52, 0.4);
+}
+
+.user-avatar {
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, #8B5E34, #D4A276);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+  font-family: 'Rastanty Cortez', cursive;
+}
+
+.user-name {
+  color: #8B5E34;
+  font-weight: 500;
+  font-size: 0.9rem;
+  font-family: 'Rastanty Cortez', cursive;
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dropdown-arrow {
+  font-size: 10px;
+  color: #8B5E34;
+  transition: transform 0.3s ease;
+}
+
+.dropdown-arrow.open {
+  transform: rotate(180deg);
+}
+
+.user-dropdown {
+  position: absolute !important;
+  top: 100% !important;
+  right: 0 !important;
+  width: 280px !important;
+  background: white !important;
+  border-radius: 12px !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12) !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  z-index: 1000 !important;
+  margin-top: 8px !important;
+  animation: dropdownSlide 0.3s ease;
+  max-height: 400px !important;
+  overflow-y: auto !important;
+  display: block !important;
+  visibility: visible !important;
+}
+
+@keyframes dropdownSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdown-header {
+  padding: 20px;
+  border-bottom: 1px solid #f0f0f0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.dropdown-avatar {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, #8B5E34, #D4A276);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  font-size: 18px;
+  font-family: 'Rastanty Cortez', cursive;
+}
+
+.dropdown-user-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.dropdown-name {
+  display: block;
+  font-weight: 600;
+  color: #333;
+  font-size: 1rem;
+  margin-bottom: 4px;
+  font-family: 'Rastanty Cortez', cursive;
+}
+
+.dropdown-email {
+  display: block;
+  color: #666;
+  font-size: 0.85rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dropdown-divider {
+  height: 1px;
+  background: #f0f0f0;
+  margin: 8px 0;
+  display: block !important;
+  visibility: visible !important;
+}
+
+.dropdown-menu {
+  padding: 12px 0;
+  max-height: 300px;
+  overflow-y: auto;
+  display: block !important;
+  visibility: visible !important;
+}
+
+.dropdown-item {
+  display: flex !important;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  color: #333;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  font-family: 'Rastanty Cortez', cursive;
+  font-size: 0.9rem;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.dropdown-item:hover {
+  background-color: #f8f9fa;
+  color: #8B5E34;
+}
+
+.dropdown-icon {
+  font-size: 16px;
+  width: 20px;
+  text-align: center;
+}
+
+.logout-item {
+  color: #dc3545 !important;
+  font-weight: 600;
+  margin: 0;
+  padding: 16px 20px;
+  transition: all 0.3s ease;
+  border-radius: 0 0 12px 12px;
+}
+
+.logout-item:hover {
+  background-color: #fff5f5 !important;
+  color: #dc3545 !important;
+  transform: translateX(4px);
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.user-profile-inline {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 25px;
+  padding: 6px 16px 6px 8px;
+  margin-left: 10px;
+}
+
+.user-profile-inline .user-avatar {
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, #8B5E34, #D4A276);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+  font-family: 'Rastanty Cortez', cursive;
+}
+
+.user-profile-inline .user-name {
+  color: #8B5E34;
+  font-weight: 500;
+  font-size: 0.95rem;
+  font-family: 'Rastanty Cortez', cursive;
+  max-width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.user-profile-inline .btn-logout {
+  background: #fff;
+  color: #dc3545;
+  border: 1.5px solid #dc3545;
+  border-radius: 20px;
+  font-weight: 600;
+  padding: 6px 18px;
+  font-size: 1rem;
+  margin-left: 8px;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.user-profile-inline .btn-logout:hover {
+  background: #dc3545;
+  color: #fff;
+  border-color: #dc3545;
+}
+
 @media (max-width: 991px) {
   .navbar-searchbar {
     max-width: 180px;
@@ -156,5 +412,49 @@
     font-size: 1.7rem !important;
     margin-right: 10px;
     margin-left: 10px;
+  }
+  
+  .user-profile-trigger {
+    padding: 6px 10px;
+  }
+  
+  .user-avatar {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+  }
+  
+  .user-name {
+    font-size: 0.8rem;
+    max-width: 80px;
+  }
+  
+  .user-dropdown {
+    width: 260px;
+    right: -10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .user-name {
+    display: none;
+  }
+  
+  .user-profile-trigger {
+    padding: 8px;
+  }
+  
+  .user-dropdown {
+    width: 240px;
+    right: -20px;
+  }
+  
+  .dropdown-header {
+    padding: 15px;
+  }
+  
+  .dropdown-item {
+    padding: 10px 15px;
+    font-size: 0.85rem;
   }
 }

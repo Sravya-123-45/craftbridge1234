@@ -12,3 +12,60 @@
 .custom-font {
     font-family: 'Monsieur La Doulaise', cursive !important;
   }
+
+/* Social Media Links Styling */
+.social-media-section {
+  margin-top: 2rem;
+}
+
+.social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #8B5E34;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.social-link:hover {
+  background-color: #f8f9fa;
+  border-color: #8B5E34;
+  color: #8B5E34;
+  text-decoration: none;
+  transform: translateX(5px);
+}
+
+.social-link i {
+  font-size: 1.2rem;
+  width: 20px;
+}
+
+/* Copyright Section Styling */
+.copyright-section {
+  background-color: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-top: 2rem;
+}
+
+.copyright-text {
+  color: #6c757d;
+  font-size: 0.9rem;
+  margin: 0;
+  font-weight: 500;
+}
+
+.copyright-text::before {
+  content: "©";
+  margin-right: 0.3rem;
+}

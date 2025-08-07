@@ -1,10 +1,16 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../Auth/AuthContext';
 import './Buyer.css';
 
 const Buyer = () => {
+  const { user } = useAuth();
+  const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [cart, setCart] = useState([]);
+  const [showPopup, setShowPopup] = useState(false);
+  const [showLoginPrompt, setShowLoginPrompt] = useState(false);
 
   // Sample product data
   const products = [
@@ -61,6 +67,10 @@ const Buyer = () => {
   });
 
   const addToCart = (product) => {
+    if (!user) {
+      setShowLoginPrompt(true);
+      return;
+    }
     setCart([...cart, product]);
     alert(`${product.name} added to cart!`);
   };
@@ -73,8 +83,51 @@ const Buyer = () => {
     return cart.reduce((total, item) => total + item.price, 0);
   };
 
+  const handleBuyNow = () => {
+    if (!user) {
+      setShowLoginPrompt(true);
+      return;
+    }
+    setShowPopup(true);
+    setTimeout(() => setShowPopup(false), 3000); // Hide popup after 3 seconds
+  };
+
+  const handleLoginRedirect = () => {
+    setShowLoginPrompt(false);
+    navigate('/login');
+  };
+
   return (
     <div className="buyer-container">
+      {/* Login Prompt Popup */}
+      {showLoginPrompt && (
+        <div className="popup-overlay">
+          <div className="popup-message">
+            <div className="popup-content">
+              <h3>🔐 Login Required</h3>
+              <p>Please sign in to add items to cart and make purchases.</p>
+              <div className="popup-buttons">
+                <button onClick={handleLoginRedirect} className="popup-login-btn">Sign In</button>
+                <button onClick={() => setShowLoginPrompt(false)} className="popup-close">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Coming Soon Popup */}
+      {showPopup && (
+        <div className="popup-overlay">
+          <div className="popup-message">
+            <div className="popup-content">
+              <h3>🚧 Coming Soon!</h3>
+              <p>This feature will be available soon. Stay tuned for updates!</p>
+              <button onClick={() => setShowPopup(false)} className="popup-close">Close</button>
+            </div>
+          </div>
+        </div>
+      )}
+
       <div className="buyer-header">
         <h1>🛍️ Buyer's Marketplace</h1>
         <p>Discover authentic handcrafted treasures from Indian artisans</p>
@@ -131,7 +184,7 @@ const Buyer = () => {
           </div>
           <div className="cart-total">
             <h4>Total: ₹{getTotalPrice()}</h4>
-            <button className="checkout-btn">Proceed to Checkout</button>
+            <button className="checkout-btn" onClick={handleBuyNow}>Buy Now</button>
           </div>
         </div>
       )}
@@ -150,6 +203,12 @@ const Buyer = () => {
                     className="add-to-cart-btn"
                   >
                     Add to Cart
+                  </button>
+                  <button 
+                    onClick={handleBuyNow}
+                    className="buy-now-btn"
+                  >
+                    Buy Now
                   </button>
                 </div>
               </div>
